@@ -1,4 +1,4 @@
-# cv_resume
+# My resume
 
 A simple repository to showcase my professional CV and resume.
 
