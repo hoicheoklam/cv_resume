@@ -12,13 +12,15 @@
 \usepackage{fontspec,xunicode}
 \usepackage[slantfont,boldfont]{xeCJK}
 \usepackage{xcolor}  % replace by the encoding you are using
-
-
+\definecolor{myblack}{RGB}{34,34,34}
+\definecolor{mycolor}{RGB}{244,243,242}
 % \setmainfont{Tahoma}
 \setmainfont{Times New Roman}  % 缺省英文字体.serif是有衬线字体sans serif无衬线字体
-\setCJKmainfont[ItalicFont={Kai}, BoldFont={Hei}]{STSong}  % 衬线字体 缺省中文字体为
+\setCJKmainfont[ItalicFont={SimHei}, BoldFont={SimHei}, Path = ./, Extension = .ttf]{SimHei} 
 \setCJKsansfont{STSong}
 \setCJKmonofont{STFangsong}  % 中文等宽字体
+
+
 %-----------------------xeCJK下设置中文字体------------------------------%
 \setCJKfamilyfont{song}{SimSun}  % 宋体 song
 \newcommand{\song}{\CJKfamily{song}}
@@ -60,7 +62,7 @@
 % \XeTeXlinebreaklocale "zh"
 % \XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
 % moderncv themes
-\moderncvtheme[blue]{classic}  % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+\moderncvtheme[burgundy]{classic}  % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
 % \moderncvtheme[green]{classic}  % idem
 % \moderncvtheme[blue,roman]{hht}
 % character encoding
@@ -74,24 +76,23 @@
 \AtBeginDocument{\recomputelengths}  % required when changes are made to page layout lengths
 
 % personal data
-\firstname{三}
-\familyname{张}
-\title{SanZhang}  % optional, remove the line if not wanted
+\firstname{\textcolor{myblack}{\song 许}}
+\familyname{\textcolor{myblack}{\song 卓岚}}
+\title{CheokLam}  % optional, remove the line if not wanted
 % \address{杭州}{}  % optional, remove the line if not wanted
-\address{1990/11/11}{}  % optional, remove the line if not wanted
-\mobile{18888888888}  % optional, remove the line if not wanted
+\address{2005/12/09}{}  % optional, remove the line if not wanted
+\mobile{+61 0423 932 568}  % optional, remove the line if not wanted
 % \fax{fax (optional)}  % optional, remove the line if not wanted
-\email{me@resume.com}  % optional, remove the line if not wanted
-\homepage{Blog: http://geekplux.com}  % optional, remove the line if not wanted
-\social[github]{GitHub: https://github.com/geekplux}
+\email{hoicheoklam@gmail.com}  % optional, remove the line if not wanted
+%\homepage{Blog: http://geekplux.com}  % optional, remove the line if not wanted
+\social[github]{https://github.com/hoicheoklam}
 \extrainfo{%
-  LinkedIn: https://cn.linkedin.com/in/xxx \\
-  WeChat: xxxx \\
-  QQ: 123456
+  https://www.linkedin.com/in/cheok-lam-hoi/ \\
+  WeChat: hcl051209 \\
 }
 
-\photo[64pt]{avatar.png}  % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
-% \quote{China\TeX 您的LaTeX乐园，TeX\&\LaTeX 王国}  % optional, remove the line if not wante
+\photo[72pt]{3.jpg}  % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+% \quote{Test}  % optional, remove the line if not wante
 
 % \nopagenumbers{}  % uncomment to suppress automatic page numbering for CVs longer than one page
 
@@ -100,49 +101,54 @@
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
+
+\pagecolor{mycolor}
+
 \maketitle
-\vspace*{-14mm}
+\vspace*{-10mm}
 
-\section{工作经历}
-\cventry{17.01-17.12}{不长不短的公司名称}{可爱的项目}{https://keaidexiangmu.com}{}{工作中，
-  我负责了 xxx 的开发和维护，运用 yyy 技术解决了 zzz 的重大问题。积极参与开源社
-  区贡献}
-\cventry{16.01-16.12}{好长的公司名称}{有趣的项
-  目}{http://www.youqudexiangmu.com}{}{工作中，我按照领导的要求编程，做出了让领
-  导满意的作品，为公司做出了贡献。我觉得我还是凑字数吧，编不下去了}
-\cventry{15.01-15.12}{不知道叫什么的公司名称}{不可告人的项
-  目}{http://bukegaoren.com}{}{独立编写了根本编不下去的项目简介，可能还是凑字数
-  比较好，来凑字数吧来凑字数吧来凑字数吧。出色的完成了凑字数的工作，并获得了最佳
-  凑字数员工奖}
-\section{教育经历}
-\cventry{11.09-15.06}{本科}{尼姑庵大学}{计算机科学与技术}{}{}  % arguments 3 to 6 are optional
-\cvlistitem{最快编程大师一等奖}
-\cvlistitem{最强编程大师金奖}
-\cvlistitem{第 x 届「编程杯」gayhub 赛区一等奖}
-\cvlistitem{国家奖学金/三好学生/学生会主席/\emph{获得女朋友一个}}
-\cventry{15.09-18.06}{硕士}{和尚庙大学}{软件工程}{实验室 XXX 导师 XXX}{主要研究了
-  人工智能，图形学，编译原理，机械键盘的拆装，快递包装的暴力拆解，颈椎与视觉保
-  养，抹平小腹，治疗腰椎间盘突出}  % arguments 3 to 6 are optional
-\section{项目}
-\subsection{科研项目}
-\cvline{FFF-TNT}{建立深度学习模型，通过训练单身狗愤怒指数，预测 TNT 威力值，达到
-  最后 FFF 全部的效果}
-\cvline{NASA}{我又编不下去了，还是凑个字数，要不然你们将来替换也麻烦}
-\subsection{开源项目}
-\cvline{markvis}{在 markdown 中直接生成可视化图表的插件
-  \emph{https://markvis.js.org} \textbf{GitHub 1000 stars}}
-\cvline{netjsongraph.js}{用力导向图可视化出无线路由图谱数据 \emph{https://github.com/netjson/netjsongraph.js}}
-\cvline{typing}{Hexo 静态博客主题 \emph{https://github.com/geekplux/hexo-theme-typing}}
-\cvline{UnityVis}{Unity 中的基本可视化图表 \emph{https://github.com/geekplux/Basic-Visualization-in-Unity}}
-\section{技能}
-\cvline{\textbf{前端}}{熟练掌握前端该会的东西，熟悉前端该熟悉的东西，了解前端该
-  了解的原理，熟练使用前端该熟练使用的各类工具}
-\cvline{\textbf{后端}}{熟练掌握后端该会的东西，熟悉后端该熟悉的东西，了解后端该了解的原理}
-\cvline{\textbf{数据}}{掌握处理数据，掌握数据库}
-\cvline{\textbf{其他}}{熟练使用 Git/Vim/Emacs/Makefile}
+\section{\song {教育经历}}
+\cventry{24.02-至今}{本科}{\song 墨尔本大学}{\song 计算机科学}{\song 澳大利亚墨尔本,}{}
+\cvlistitem{\song 核心课程：数据库系统,面向对象编程,算法与数据结构,计算机系统基础,机器学习基础}
 
-\section{Publications}
-\cvline{已录用}{张三，李四，王麻子 基于 latex 的简历凑字数研究[C]// CVChina. 2017.}
+\vspace*{1mm}
+
+\cventry{15.09-18.06}{高中}{\song 嘉诺撒圣心英文中学}{\song 高中文凭 - 理科方向}{\song 中国澳门}{}
+\cvlistitem{\song 所获荣誉：学业优秀奖,杰出表现奖}
+
+\section{\song {技能}}
+\cvline{\textbf{编程语言}}{Python (Pandas, NumPy, scikit-learn, Matplotlib), Dart, Java, JavaScript, C/C++, SQL}
+\cvline{\textbf{技术/框架}}{PyTorch, TensorFlow, Firebase, Flutter, Express.js, Node.js, React, Spring Boot}
+\cvline{\textbf{开发工具}}{Git/GitHub, VS Code, Android Studio, Arduino IDE, Linux, MS Office, Blender}
+\cvline{\textbf{语言}}{\song 粤语(母语), 普通话(母语), 英语(雅思8.0)}
+
+\section{\song {工作经历}}
+\cventry{24.12-25.02}{上海交通大学 Thinklab 实验室}{\song 科研实习}{}{}{}
+\cvline{}{\song 参与基于深度学习的自动驾驶路径规划算法的研发,协助实现算法原型并评估其性能。}
+\cvline{}{\song 应用K近邻算法构建多模态传感器数据分类器, 以提升自动驾驶系统在动态环境下的目标识别准确率。}
+\cvline{}{\song 实现并对比评估了CNN、RNN及Transformer等主流深度学习模型在图像分类与描述生成任务上的性能。}
+\cvline{}{\song 使用Python及其数据科学库进行数据预处理、分析与可视化, 提升了数据处理效率。}
+\vspace*{1mm}
+
+\cventry{24.04-25.02}{墨尔本大学 HackMelbourne}{\song 教育项目负责人}{https://hack.melbourne/}{}{}
+\cvline{}{\song 组织并主持了3场线上技术讲座,涵盖前端开发、后端开发及全栈开发等主题,每场活动均吸引50+名参与者。}
+\cvline{}{\song 运用React开发具备状态管理与响应式设计的UI/UX组件, 提升导航效率, 进而提高参与度。}
+\cvline{}{\song 在黑客马拉松期间围绕代码调试、Git工作流与项目架构等环节进行辅导, 显著提升开发效率。}
+
+\section{\song 项目经历}
+
+\subsection{Fwend, \song 一款校园社交应用}
+\cvline{Flutter}{\song 基于Flutter开发的跨平台移动应用,通过个性分析与实时地理位置匹配大学生用户。}
+\cvline{Firebase}{\song 使用Firebase进行用户认证和数据存储,确保用户数据的安全性和隐私保护,实时数据同步与云存储功能,测试阶段支持100+用户并发访问。}
+\cvline{Node.js}{\song 后端使用Node.js与Express.js构建RESTful API,实现用户数据管理与匹配逻辑,确保高效响应与可扩展性。}
+\cvline{Git}{\song 使用Git进行版本控制,管理代码库并协同开发,提升团队协作效率。}
+\vspace*{1mm}
+\subsection{\song 无线健康监测与紧急报警系统}
+\cvline{Arduino, C++ VirtualWire}{\song 基于Arduino (C++) 构建实时生理监测系统, 负责心率与压力数据的采集。采用模块化代码结构与VirtualWire库设计通信协议, 增强了系统可维护性与扩展性。}
+\cvline{}{\song 通过优化底层数据传输协议，将无线传输延迟降低至毫秒级，显著提升了数据实时性。}
+\cvline{}{\song 在接收端实现事件驱动架构, 成功将危急警报的触发响应时间缩短60\%, 达到200毫秒内, 保障了系统的及时性。}
+
+
 
 % \subsection{Vocational}
 % \cventry{year--year}{Job title}{Employer}{City}{}{Description}  % arguments 3 to 6 are optional
